@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { Contacto } from 'src/domains/entities/contacto.entity';
 import { Repository } from "typeorm";
-import { CreateEmailDto } from "../dto/create-email.dto";
-import { Email, EmailStatus } from "../entities/email.entity";
+
+
 
 @Injectable()
 export class CreateEmailUseCase {
-    constructor(private readonly emailRepo: Repository<Email>) { }
+    constructor(private readonly emailRepo: Repository<Contacto>) { }
 
     execute(input: CreateEmailDto) {
         const email = new Email(input);
